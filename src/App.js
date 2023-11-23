@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [desiredClass, setDesiredClass] = useState("");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className={desiredClass}>
+        <img
+          id="mru-logo"
+          src="https://res.cloudinary.com/mkf/image/upload/v1686003313/mru-white_learui.png"
+        />
+      </section>
+      <input
+        type="text"
+        placeholder="Write Class Name Here"
+        value={desiredClass}
+        onChange={(e) => setDesiredClass(e.target.value)}
+      />
     </div>
   );
 }
